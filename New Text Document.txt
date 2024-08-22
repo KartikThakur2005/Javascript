@@ -1,0 +1,270 @@
+
+JavaScript --> high level language
+
+
+1> There are two type of datatype
+                        |
+          1>primitive       2>class or address
+
+
+
+2> Variables ------------------------------------------------------
+
+a> var ---> is es5
+
+b> let , const ---> es6 
+
+a>var
+
+b> let ---> let can be undefined and its vaue can be changed
+
+c> const ---> const is immutable  and cannot be undefined
+
+
+
+3> String -----------------------------------------------------------
+
+
+Tempelate string ---->   `$[}`
+
+
+4> Conversion of value -----------------------------------------------
+
+a>Conversion ---> which we do manually
+  1>Number --> string into num
+  
+ 
+b> coercion ---> which javascript do 
+   1> only done by (+) 
+   2>  (-,^,%,*) --> do oppostive will try to convert into INTEGER	4
+
+   let x='1'+1  ---> giver '11' string
+    
+    x=x-1  --> will give 10
+
+   '10'-'4'-'3'-2+'5' ==='15'
+
+
+
+5> -------------------  == || === ------------------------------------
+
+1> === --> strict equality operator  does not do type corechion
+
+2> ==  do type corehcion
+
+  if('18'===18) -->false;
+
+  if('18'==18) ---> ture:
+
+
+
+6> -------------- terninary operator --------------
+
+ age>=110 ? console.log("hello") : console.log("hhi")
+
+
+7> -------------------- strict mode -----------------
+use strict ---> should use in first of the code
+
+a> it disable use some feature like  ---> in case of wrong spelling of variable it show error
+b> it also show error when we use reserved word
+
+
+8> ------------------------------- function --------------------------------
+
+1> function declaration  function fun(){}
+   function declaration does not show error when we call it before declaring
+
+2> function expression --->  var x= function(){}----->> also called anonymous function
+   
+   function expression show error when we call it before declaring ;
+
+
+3> arrow function
+
+      const fun=(parameter) => return;
+   ]
+   a> this is not sported in arrow function
+
+
+9> ------------------------------ ARRAY ------------------------------------
+  
+const year=new Array(1,2,3,4)
+
+const month=["Jan","Feburary"]'
+
+a> arr.push("March");----> at end of array
+b> arr.unshift("Start") --> insert element at the starting of array
+
+c> arr.pop() ----> will remove last element from array;
+d>arr.shift() ---> will remove element from starting
+
+e> arr.indexOf("Febuaray");  ---> return index
+
+d> arr.includes("Apri") ;---> return true;
+
+
+
+
+10> -------------------------- Object ---------------------------------
+
+Object is used to give name to data  || key:value
+
+Two ways to retrieve value
+a>(.) details.name;
+b> ["name"]  detaisl["name"] 
+
+  difference between . and [] 
+
+  details['first'+key];
+
+
+c> we can also add function in an object ;
+
+    let x={ 
+   name:"kartik",
+   lastname:"thakur",
+   birthyear:"2005",
+
+   age:()=>birthyer-2024
+
+}
+ }
+
+d> this is use when we want to access the key inside object in a function inside a object
+
+   let x={ 
+   name:"kartik",
+   lastname:"thakur",
+   birthyear:"2005",
+
+   age:()=>this.birthyer-2024       ----> this is not used
+ 
+    age:function()
+{
+          return 2024-this.birthyear
+}
+
+}
+
+
+------------------------------------------ DOM -----------------------------------------------
+
+DOM ---> document object model  --> it allows us to access html element and style
+
+DOM is automatically created by web browser as soon it loads html
+
+DOM is sored in tree formatl
+
+document is the entry point in the html by this javascript can acess the html
+
+
+////--> DOM is	 part of web api not of javascript
+
+1> how to select an element --> document.querySellector();
+2>how to change the content of element --->document.querySellector().textContent="hello"
+
+3> How to select input  type and set it value  --> document.querrySellector().value=23;
+
+4> How to add event --->  document.querySelector("btn").addEventListner("click",function())
+
+5> How to generate random number --> Math.trunc(Math.Random() *20);
+
+
+------------------------- How to add css ---------------------------
+
+document.querySelector("body").style.backgroundColor="#6047"
+
+
+
+
+
+
+
+-------------------------- classList -----------------------------
+we can remove a specific class;
+we can add    a specific class;
+
+
+----------------------- keyboard -------
+
+document.addevent("keyboard",function(){})
+
+when a key is pressed a an object is created with information of having which key is pressed 
+
+document.addevent("keydown",function( eve ){
+ 
+ conslole.log(eve.key); 
+
+})
+
+
+---------------------- src -------------------
+
+const dice = Math.random();
+diceEl.src = `dice-${dice}png`
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------- ALL ABOUT JAVASCRIPT ---------------------------------------------
+
+What is JavaScript ?
+
+1> JavaScript is high level language because --> we dont have to manage memory because it have garbage collector --> which will automatically clean our memeory
+2> Every thing in javascript is object --> because we can have multiple properties
+3> we can pass function or return a function 
+4>javascript is dynamic language because we dont have to assign datatype
+
+
+ -- JavaScript engine 
+ Every browser has its own js engine	
+ entire code is converted into machine code and then executed immediately
+
+  CODE IS EXECUTED BY JS ENGINE
+  
+ 1> PARSING --- data is read and converted into AST ( Abstract Syntax tree )
+                this also check if there is any syntax error
+ 
+ 2> Compilation --> converted into machine code
+ 
+ 3> execution ---> javascript immediately execute the code after compilation
+
+ web api are provided by web browser which are not part of js
+ callback qeue --> conatin all events
+ now hen a callback function is called ( click ) it goes to call Stack for compilation this is managed by EVENT LOOP
+
+
+
+ Steps for execution 
+ 
+ 1> Creation of global level execution code ( top level code ) those code which is not inside a function  ( let a = 1 ) here one execution conext is creted for all code ( like box which will contain all necessary thing required by the code )
+ 2> execution of top level code
+
+ 3> Function started to execute --> one exection context ( box ) for every function is created  
+ 4> these are send to callback function
+
+  EXECUTION CONTEXT ( like box )----
+  
+  1> Varaiable enviroment contain let const
+  2> Scope chain --> this manages refrences ( like inside a function varaible is used which is declared outside the code )
+  3> this keyword
+
+  CALL STACK ---> Where all execution context is stored 
+
+
+
+---------------- SCOPE CHAIN ---------------------------------------------------------------
+ 
+1> Global Scope --> these are accessed everywhere
+2> Function Scope --> these are only accessed inside the function
+3> Block Scope --> inside the if or for loop   --> let and const are used 
+
+ var   --> are function scope  even if its is declared inside a if statements
+  
+   
+ 

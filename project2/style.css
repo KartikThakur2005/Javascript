@@ -1,0 +1,71 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body
+{
+    height: 100%;
+    width: 100%;
+}
+
+.page
+{
+    height: 100%;
+    width: 100%;
+    background-color:rgb(149, 253, 149);
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    padding: 2vw;
+    position: relative;
+
+}
+
+.btn
+{
+    height: 40px;
+    width: 150px;
+}
+
+.cont
+{
+    height: 50%;
+    width: 40%;
+    background-color:beige;
+    position: absolute;
+   top: 50%;
+
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2vw;
+padding: 0.5vw;
+}
+
+
+.in
+{
+    height: 30px;
+    width: 100%;
+  
+
+    display: flex;
+    justify-content: end;
+}
+.close-btn
+{
+    height: 100%;
+    width: 20px;
+    background-color: red;
+}
+
+
+.hidden
+{
+    display: none;
+}
