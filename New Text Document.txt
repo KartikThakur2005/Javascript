@@ -264,7 +264,66 @@ What is JavaScript ?
 2> Function Scope --> these are only accessed inside the function
 3> Block Scope --> inside the if or for loop   --> let and const are used 
 
- var   --> are function scope  even if its is declared inside a if statements
+ var   --> are function scope  even if its is declared inside a if statement
   
+
+
+
+---------------------------------------- Hoisting -------------------------------------------
+
+Var --> if variable is called before its declaration the undefined is shown
+
+see example line -23 - line-32;
+
+let const ---> when declare does not show in the window but var can be seen
+
+
+----------------------------------------- THIS ---------------------------------------------
+
+line -80  hoisitng
+
+
+1> inside object calling method  
+ 
+ here this will refer to object which is assigned [ kar ]
+
+  const kar
+{
+   name:kar;
+ 
+    print : function()
+    {
+        conslole.log(this.name);
+     }
    
+ }
+   
+
+2> simple function  ---> return window;
+
+3> arrow function  ---> it does not have this keyword so it takes this of outer scope
+   this is called lexical this
+
+
+
+
+------------------------------------------ Arrow vs Normal function ----------------------
+
+arrow does not have its own this it uses parent this --> called lexical this;
+
+arrow does not have argument --> means we cannot take input multiple without declaring arg
+
+ (a,b) =>{}
+
+  (2,3,4,5,) - -> this will not happen in arrow
+
+
+
+
+
+----------------------------------------  argumenst ----------------------
+
+we can pass multiple argument by arguments in function
+
+
  
