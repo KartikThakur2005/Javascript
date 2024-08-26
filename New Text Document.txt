@@ -317,6 +317,8 @@ arrow does not have argument --> means we cannot take input multiple without dec
 
   (2,3,4,5,) - -> this will not happen in arrow
 
+we can  check this by arguments and can access the value by for loop in that array;
+
 
 
 
@@ -326,4 +328,28 @@ arrow does not have argument --> means we cannot take input multiple without dec
 we can pass multiple argument by arguments in function
 
 
+-----------------------------    Primitive vs Object     --------------------------------
+
+1> primitve are stored in call stack --> in execution context
+
+2> Object are stored in heap memory because of refrence actuall value is also changed
+
+3> use aobject assign; 
+ 
+line 1 -- 16
+
+
+
+
+
+
+------------     Destructing arrays     -------------------------------
+arr = [1, 2, 3, 4]; 
+
+let [a , b] = arr;
+
+Because we have to give exact same properties while destructing	
+while destructing an object we don't require to give blank space like array let [a , ,b] = arr;
+
+line : 70; 140;
  
