@@ -1,4 +1,4 @@
-
+w
 JavaScript --> high level language
 
 
@@ -352,4 +352,208 @@ Because we have to give exact same properties while destructing
 while destructing an object we don't require to give blank space like array let [a , ,b] = arr;
 
 line : 70; 140;
+
+
+
+
+
+------------------------------- Spread Array -------------------------------
+
+let arr = [1, 2, 3]
+
+console.log(...arr)  --->  1, 2, 3, --> like iterating by for loop
+
+line --> 1-6 spread
+
+
+difference between spread and destructing  --->  spread extract all element of array
+                                                 spread can be used for joining two or more array
+                                              by destructing we can access our own favourite element
+
+
+${...arr}  we cannot do this because template literal do not accept multiple by comma
+
+
+
+
+
+----------------------------- REST OPERAOTOR ----------------------------------
+
+line 99 - spread
+
+Rest is used with destrucring
+
+rest is on left hand side of =
+
+let [a, b, ...other] = [1, 2, 3, 4, 5];
+
+
+
+Difference between spread and rest
+
+ rest  --> function fun(a, ...b){}  --> here a will collect 1st argument and rest will be given to b
+  
+
+  spread  --->  let arr [1,2,3,4];
+                fun(...arr) --> here all value will be spreaded  
+
+
+
+
+
+
+============================================= Nullish 
+it does not include 0 or '',
+compare on basis of real value not on bases on null
+
+ console.log(0 ?? 1) --> 0
+
+
+----------------- logical assignment operator
+
+rest1 = 0;
+rest2 =20;
+
+rest1 ||= 10;
+rest2 ||= 10;   --> this means if does not present then assign the value
+
+
+
+
+
+--------------------------------------------------------------- For off LOOP --------------------------------------------------------
+
+line 143
+
+for of  ---> it is used for extracting the value of array 
+we can use break and continue 	
+
+
+--- objects --> in objects we cannot directly use for of
+     we have to use  
+     1> for keys  -->  let objkey = Object.key(rest)  --> return an array;
+     2> we can also use eneterires:
+
+
+---------------------------------------------- Optional chaning ( ?) ---------------------------------
+
+line - 158 spread	
+
+if a property is not present like this
+
+ restaurant.openinghour.mon.open   --> here neither Monday is available nor its time then it will show error [  undefined.property == error ]
+    
+   |
+   |
+use optional chaning   --->   restaurant.openinghour.mon?.open 
+
+
+
+
+---------------------------------------------  MAP ------------------------------------------------
+The main difference between map and object is that ---> the key of map can be anything
+
+
+we kan covert a map into object ---> let mp = new Map(object.entries);
+
+
+
+
+
+
+------------------------------------- When to use which data struture --------------------------------
+
+1> simple list of values ---> we will use array
+2> key: value ---> map or object
+
+
+
+
+
+
+
+
+--------------------------------------------------------------- FUNCTION ---------------------------------------------
+
+MAP --LINE80
+
+High order function ---> which recive another function
+
+
+greet("Hello")("Jonas)  --> it is calling function insdie the function
+
+
+
+---------- CALL AND APPPLY --------------------------
+
+line 55 functions
+
+
+Call method tells where this keyword should point
+
+book.call(airIndia)
+
+
+DIFFERENCE BETWEEN CALL AND APPLY   1> call just take simple argument
+                                        
+                                        call(airIndia, 1, "Kartik)
+                                    2> Apply take Array of arguments
+                                       apply(airIndia, [1, "Kartik])
+
+
+---------- BIND --------------------------------------
+
+Bind return this keword bounded to that function
+
+let bookEw = book.bind(airIndia)  ---> this will bind  NEW function to airIndia
+
+
+when we a function uses this keyword and that function is callbacked by eventlistner
+than ----> this refer to that element in which eventlistner is applied 
+
+so use bind
+
+addEventlisnter("click", AirIndia.byplane.bind(AirIndia));
+
+
+
+
+
+
+----------------------------  Immediately called function ------------------------
+
+These are those function which run only once
+
+( function () 
+{
+      console.log(" This will run automatically")
+}
+
+)();
+
+
+
+
+
+--------------------------------- CLOUSER -----------------------------------------
+
+line 132
+
+Closer any function which was created in its parent will have always access to its parent function variable
+
+let secureBook = function(){
+    let passenger = 0;
+
+    return function(){
+        passenger++;
+        console.log(`${passenger} passenger`)
+    }
+}
+
+const book = secureBook();
+
+book();  -->1
+book();  -->2
+book();  -->3
+
  
